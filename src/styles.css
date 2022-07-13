@@ -24,12 +24,13 @@ ul {
 .today {
   font-size: 12px;
   line-height: 1.2;
-  text-transform: capitalize;
-}
 
-.today {
   color: #545454;
   margin: 0;
+}
+
+.today::first-letter {
+  text-transform: capitalize;
 }
 .current-temperature {
   line-height: 1.2;
