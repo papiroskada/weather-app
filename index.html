@@ -10,6 +10,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Document</title>
   </head>
@@ -17,14 +18,14 @@
     <div class="container">
       <div class="row">
         <div class="col-6">
-          <h1>Kyiv</h1>
+          <h1 id="city"></h1>
           <ul class="today">
             <li>Tuesday 18:13</li>
-            <li>Clear</li>
+            <li id="description"></li>
           </ul>
         </div>
         <div class="col-6 current-temperature">
-          <strong>17</strong>
+          <strong id="currentTemp"></strong>
           <span class="units">°C|F</span>
         </div>
       </div>
@@ -38,9 +39,8 @@
         </div>
         <div class="col">
           <ul>
-            <li>Precipitation: 20%</li>
-            <li>Wind: 2km/h</li>
-            <li>Humidity: 80%</li>
+            <li>Wind: <span id="wind"></span> km/h</li>
+            <li>Humidity: <span id="humidity"></span> %</li>
           </ul>
         </div>
       </div>
@@ -51,5 +51,6 @@
       >
       by Dasha Sidenko
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>

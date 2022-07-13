@@ -24,6 +24,7 @@ ul {
 .today {
   font-size: 12px;
   line-height: 1.2;
+  text-transform: capitalize;
 }
 
 .today {
