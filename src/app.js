@@ -27,15 +27,23 @@ function displayTemp(response) {
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
   let date = document.querySelector("#date");
+  let icon = document.querySelector("#icon");
+
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   description.innerHTML = response.data.weather[0].description;
   city.innerHTML = response.data.name;
   humidity.innerHTML = Math.round(response.data.main.humidity);
   wind.innerHTML = Math.round(response.data.wind.speed);
   date.innerHTML = formatDate(response.data.dt * 1000);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "24ff68a2822aceb5a863e8fd5e6c4e42";
-let url = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiKey}&units=metric`;
+let city = "Kyiv";
+let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 console.log(url);
 axios.get(url).then(displayTemp);

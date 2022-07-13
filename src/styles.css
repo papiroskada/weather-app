@@ -45,10 +45,11 @@ ul {
 }
 hr {
   border-top: 2px solid #000000;
+  margin-bottom: 0;
 }
 .forecast img {
-  max-width: 80px;
   margin: 0;
+  max-width: 120px;
 }
 .code-link {
   text-align: center;
@@ -59,5 +60,5 @@ hr {
   line-height: 1.5;
 }
 .forecast ul {
-  margin: 5px 0;
+  margin: 30px 0 0;
 }
