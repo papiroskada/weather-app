@@ -2,9 +2,9 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 .container {
-  max-width: 650px;
+  max-width: 600px;
   margin: 20px auto;
-  padding: 20px 40px;
+  padding: 20px 56px;
   border: 2px solid #a6a6a6;
   border-radius: 4px;
 }
@@ -21,9 +21,26 @@ ul {
 }
 .today {
   font-size: 12px;
+  line-height: 1.2;
 }
 h1,
 .today {
   color: #545454;
   margin: 0;
+}
+.current-temperature {
+  line-height: 1.2;
+}
+.current-temperature strong {
+  font-size: 62px;
+}
+.current-temperature .units {
+  font-size: 22px;
+  vertical-align: top;
+}
+hr {
+  border-top: 2px solid #a6a6a6;
+}
+.forecast img {
+  max-width: 80px;
 }
