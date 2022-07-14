@@ -16,15 +16,34 @@
   </head>
   <body>
     <div class="container">
+      <form class="searching" id="searching-form">
+        <div class="row">
+          <div class="col-8">
+            <input
+              class="form form-control form-control-md"
+              type="text"
+              placeholder="Enter the city..."
+              id="enter-city"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              class="search btn btn-outline-dark"
+              type="submit"
+              value="Search"
+            />
+          </div>
+        </div>
+      </form>
       <div class="row">
-        <div class="col-6">
+        <div class="col-7">
           <h1 id="city"></h1>
           <ul class="today">
             <li id="date"></li>
             <li id="description"></li>
           </ul>
         </div>
-        <div class="col-6 current-temperature">
+        <div class="col-5 current-temperature">
           <strong id="currentTemp"></strong>
           <span class="units">°C|F</span>
         </div>
@@ -32,7 +51,7 @@
       <hr />
       <div class="row forecast">
         <div class="col-5">
-          <img src="/" alt="clear" id="icon" />
+          <img src=".." alt="clear" id="icon" />
         </div>
         <div class="col-6">
           <ul>
