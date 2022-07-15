@@ -65,3 +65,10 @@ hr {
 .searching {
   margin: 10px 0 20px;
 }
+.active {
+  color: #000000;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
+}

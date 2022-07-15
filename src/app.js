@@ -29,7 +29,9 @@ function displayTemp(response) {
   let date = document.querySelector("#date");
   let icon = document.querySelector("#icon");
 
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  celciusTemp = response.data.main.temp;
+
+  currentTemp.innerHTML = Math.round(celciusTemp);
   description.innerHTML = response.data.weather[0].description;
   city.innerHTML = response.data.name;
   humidity.innerHTML = Math.round(response.data.main.humidity);
@@ -54,5 +56,29 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
+function changeUnits(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#currentTemp");
+  let farenheiTemp = (celciusTemp * 9) / 5 + 32;
+  celciusTempElement.classList.remove("active");
+  farenheitchanging.classList.add("active");
+  tempElement.innerHTML = Math.round(farenheiTemp);
+}
+function defaultUnit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#currentTemp");
+  tempElement.innerHTML = Math.round(celciusTemp);
+  celciusTempElement.classList.add("active");
+  farenheitchanging.classList.remove("active");
+}
+
+let celciusTemp = null;
 let form = document.querySelector("#searching-form");
 form.addEventListener("submit", handleSubmit);
+
+let farenheitchanging = document.querySelector("#convert-to-F");
+farenheitchanging.addEventListener("click", changeUnits);
+
+let celciusTempElement = document.querySelector("#celsiusTemp");
+celciusTempElement.addEventListener("click", defaultUnit);
+search("Kyiv");
