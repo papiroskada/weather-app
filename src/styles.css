@@ -4,9 +4,12 @@ body {
 .container {
   max-width: 550px;
   margin: 20px auto 0;
-  padding: 20px 56px;
+  padding: 20px 30px;
   border: 2px solid #c1c0c0;
   border-radius: 4px;
+}
+.main-info {
+  margin: 0 26px;
 }
 h1 {
   font-size: 36px;
@@ -71,4 +74,30 @@ hr {
 }
 .active:hover {
   text-decoration: none;
+}
+.weather-forecast-day {
+  line-height: 2px;
+
+  padding: 15px;
+}
+.forecast-date {
+  text-align: center;
+  font-size: 16px;
+  color: #323232;
+}
+.forecast-temp {
+  text-align: center;
+}
+.forecast-icon {
+  margin: 0 auto;
+  width: 55px;
+}
+.forecast-temp {
+  font-size: 14px;
+}
+.forecast-temp-max {
+  color: #323232;
+}
+.forecast-temp-min {
+  color: #969696;
 }
