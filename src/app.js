@@ -72,6 +72,32 @@ function defaultUnit(event) {
   farenheitchanging.classList.remove("active");
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+          <div class="col-2 weather-forecast-day" >
+            <div class="forecast-date">${day}</div>
+            <img
+              src="http://openweathermap.org/img/wn/03d@2x.png"
+              alt="clear"
+              class="forecast-icon"
+            />
+            <div class="forecast-temp">
+              <span class="forecast-temp-max">31°</span>
+              <span class="forecast-temp-min">25°</span>
+            </div> </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let celciusTemp = null;
 let form = document.querySelector("#searching-form");
 form.addEventListener("submit", handleSubmit);
@@ -82,3 +108,5 @@ farenheitchanging.addEventListener("click", changeUnits);
 let celciusTempElement = document.querySelector("#celsiusTemp");
 celciusTempElement.addEventListener("click", defaultUnit);
 search("Kyiv");
+
+displayForecast();
