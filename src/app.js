@@ -20,6 +20,15 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+
+function getForecast(coordinates) {
+  let APIkey = `24ff68a2822aceb5a863e8fd5e6c4e42`;
+
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${APIkey}&units=metric`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
+
 function displayTemp(response) {
   let currentTemp = document.querySelector("#currentTemp");
   let humidity = document.querySelector("#humidity");
@@ -42,7 +51,10 @@ function displayTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   icon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
+
 function search(city) {
   let apiKey = "24ff68a2822aceb5a863e8fd5e6c4e42";
 
@@ -72,7 +84,8 @@ function defaultUnit(event) {
   farenheitchanging.classList.remove("active");
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat"];
@@ -108,5 +121,3 @@ farenheitchanging.addEventListener("click", changeUnits);
 let celciusTempElement = document.querySelector("#celsiusTemp");
 celciusTempElement.addEventListener("click", defaultUnit);
 search("Kyiv");
-
-displayForecast();
