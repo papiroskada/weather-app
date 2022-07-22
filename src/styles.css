@@ -2,14 +2,14 @@ body {
   font-family: "JetBrains Mono", monospace;
 }
 .container {
-  max-width: 550px;
+  max-width: 650px;
   margin: 20px auto 0;
   padding: 20px 30px;
   border: 2px solid #c1c0c0;
   border-radius: 4px;
 }
 .main-info {
-  margin: 0 26px;
+  margin: 50px 80px 15px;
 }
 h1 {
   font-size: 36px;
@@ -32,9 +32,6 @@ ul {
   margin: 0;
 }
 
-.today::first-letter {
-  text-transform: capitalize;
-}
 .current-temperature {
   line-height: 1.2;
 }
@@ -65,9 +62,7 @@ hr {
 .forecast ul {
   margin: 30px 0 0;
 }
-.searching {
-  margin: 10px 0 20px;
-}
+
 .active {
   color: #000000;
   cursor: default;
@@ -80,6 +75,7 @@ hr {
 
   padding: 15px;
 }
+
 .forecast-date {
   text-align: center;
   font-size: 16px;
@@ -100,4 +96,14 @@ hr {
 }
 .forecast-temp-min {
   color: #969696;
+}
+.searching {
+  margin: 10px 10px 20px;
+}
+.form {
+  max-width: 300px;
+  display: inline-flex;
+}
+.search {
+  display: inline-flex;
 }

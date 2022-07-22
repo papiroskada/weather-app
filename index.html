@@ -16,26 +16,27 @@
   </head>
   <body>
     <div class="container">
+      <form class="searching" id="searching-form">
+        <input
+          class="form form-control form-control-md"
+          type="text"
+          placeholder="Enter the city..."
+          id="enter-city"
+          autocomplete="off"
+        />
+
+        <input
+          class="search btn btn-outline-dark"
+          type="submit"
+          value="Search"
+        />
+
+        <button class="btn btn-outline-dark" id="location">
+          Current location
+        </button>
+      </form>
+
       <div class="main-info">
-        <form class="searching" id="searching-form">
-          <div class="row">
-            <div class="col-8">
-              <input
-                class="form form-control form-control-md"
-                type="text"
-                placeholder="Enter the city..."
-                id="enter-city"
-              />
-            </div>
-            <div class="col-3">
-              <input
-                class="search btn btn-outline-dark"
-                type="submit"
-                value="Search"
-              />
-            </div>
-          </div>
-        </form>
         <div class="row">
           <div class="col-7">
             <h1 id="city"></h1>
@@ -66,9 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="weather-forecast" id="weather-forecast">
-       
-      </div>
+      <div class="weather-forecast" id="weather-forecast"></div>
     </div>
     <div class="code-link">
       <a href="https://github.com/papiroskada/weather-app" target="_blank"

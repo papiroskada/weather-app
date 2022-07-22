@@ -98,7 +98,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecastData.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
         ` 
@@ -126,6 +126,19 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
+function findLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
+function handlePosition(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let units = "metric";
+
+  let apiKey = `24ff68a2822aceb5a863e8fd5e6c4e42`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(url).then(displayTemp);
+}
 
 let celciusTemp = null;
 let form = document.querySelector("#searching-form");
@@ -137,3 +150,6 @@ farenheitchanging.addEventListener("click", changeUnits);
 let celciusTempElement = document.querySelector("#celsiusTemp");
 celciusTempElement.addEventListener("click", defaultUnit);
 search("Kyiv");
+
+let currentLocation = document.querySelector("#location");
+currentLocation.addEventListener("click", findLocation);
